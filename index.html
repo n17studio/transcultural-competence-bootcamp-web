@@ -13,21 +13,21 @@
        DESIGN TOKENS
        ========================================== */
     :root {
-      --navy: #0B2A6B;
-      --navy-light: #1A3D8F;
-      --navy-dark: #071D4A;
-      --gold: #F0B429;
-      --gold-hover: #D99E1E;
-      --gold-light: rgba(240, 180, 41, 0.12);
-      --teal: #0D9488;
-      --teal-hover: #0B7E73;
-      --teal-light: #CCFBF1;
-      --text-primary: #111827;
-      --text-secondary: #374151;
+      --navy: #2B6B7F;
+      --navy-light: #367F95;
+      --navy-dark: #1E4F5E;
+      --gold: #E8735A;
+      --gold-hover: #D4613F;
+      --gold-light: rgba(232, 115, 90, 0.12);
+      --teal: #2B6B7F;
+      --teal-hover: #1E4F5E;
+      --teal-light: #E0F0F4;
+      --text-primary: #2D2B55;
+      --text-secondary: #4A4870;
       --text-muted: #6B7280;
-      --border: #E5E7EB;
-      --surface: #F9FAFB;
-      --cream: #FFFBF5;
+      --border: #E8DDD8;
+      --surface: #FDF5F1;
+      --cream: #FDE8E0;
       --white: #FFFFFF;
       --font-heading: 'Plus Jakarta Sans', sans-serif;
       --font-body: 'Inter', sans-serif;
@@ -39,7 +39,7 @@
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
       --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
       --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
-      --shadow-gold: 0 4px 16px rgba(240,180,41,0.25);
+      --shadow-gold: 0 4px 16px rgba(232,115,90,0.25);
     }
 
     /* ==========================================
@@ -132,7 +132,7 @@
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .navbar.scrolled {
-      background: rgba(11, 42, 107, 0.95);
+      background: rgba(30, 79, 94, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 10px 0;
@@ -167,7 +167,7 @@
       font-family: var(--font-heading);
       font-weight: 600;
       font-size: 0.875rem;
-      color: var(--navy);
+      color: var(--white);
       background: var(--gold);
       padding: 10px 24px;
       border-radius: var(--radius-full);
@@ -233,7 +233,7 @@
     .hero-orb--gold {
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(240,180,41,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,115,90,0.12) 0%, transparent 70%);
       top: -10%;
       right: -5%;
       animation: float 12s ease-in-out infinite;
@@ -241,7 +241,7 @@
     .hero-orb--teal {
       width: 350px;
       height: 350px;
-      background: radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(43,107,127,0.08) 0%, transparent 70%);
       bottom: 10%;
       left: -5%;
       animation: float 16s ease-in-out infinite reverse;
@@ -264,8 +264,8 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--gold);
-      background: rgba(240,180,41,0.1);
-      border: 1px solid rgba(240,180,41,0.2);
+      background: rgba(232,115,90,0.1);
+      border: 1px solid rgba(232,115,90,0.2);
       padding: 8px 20px;
       border-radius: var(--radius-full);
       margin-bottom: 32px;
@@ -359,14 +359,14 @@
     }
     .btn-hero-gold {
       background: var(--gold);
-      color: var(--navy);
+      color: var(--white);
       border-color: var(--gold);
     }
     .btn-hero-gold:hover {
       background: var(--gold-hover);
       border-color: var(--gold-hover);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-gold), 0 8px 32px rgba(240,180,41,0.3);
+      box-shadow: var(--shadow-gold), 0 8px 32px rgba(232,115,90,0.3);
     }
     .btn-hero-outline {
       background: transparent;
@@ -526,12 +526,12 @@
       position: relative;
     }
     .programme-day--fri .programme-day-header {
-      background: linear-gradient(135deg, rgba(240,180,41,0.06) 0%, rgba(240,180,41,0.02) 100%);
-      border-bottom: 1px solid rgba(240,180,41,0.15);
+      background: linear-gradient(135deg, rgba(232,115,90,0.06) 0%, rgba(232,115,90,0.02) 100%);
+      border-bottom: 1px solid rgba(232,115,90,0.15);
     }
     .programme-day--sat .programme-day-header {
-      background: linear-gradient(135deg, rgba(13,148,136,0.06) 0%, rgba(13,148,136,0.02) 100%);
-      border-bottom: 1px solid rgba(13,148,136,0.15);
+      background: linear-gradient(135deg, rgba(43,107,127,0.06) 0%, rgba(43,107,127,0.02) 100%);
+      border-bottom: 1px solid rgba(43,107,127,0.15);
     }
 
     .programme-day-label {
@@ -599,10 +599,10 @@
       border-radius: var(--radius-md);
     }
     .programme-day--fri .programme-highlight {
-      background: rgba(240,180,41,0.08);
+      background: rgba(232,115,90,0.08);
     }
     .programme-day--sat .programme-highlight {
-      background: rgba(13,148,136,0.06);
+      background: rgba(43,107,127,0.06);
     }
     .programme-highlight-icon { font-size: 1.5rem; }
     .programme-highlight-text {
@@ -664,7 +664,7 @@
     }
     .feature-card:nth-child(1) .feature-icon { background: var(--gold-light); }
     .feature-card:nth-child(2) .feature-icon { background: var(--teal-light); }
-    .feature-card:nth-child(3) .feature-icon { background: rgba(11,42,107,0.08); }
+    .feature-card:nth-child(3) .feature-icon { background: rgba(43,107,127,0.08); }
     .feature-card:nth-child(4) .feature-icon { background: var(--gold-light); }
 
     .feature-title {
@@ -709,7 +709,7 @@
       right: -30%;
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, rgba(240,180,41,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,115,90,0.15) 0%, transparent 70%);
       border-radius: 50%;
     }
     .audience-visual-card blockquote {
@@ -795,7 +795,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(240,180,41,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,115,90,0.06) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -814,7 +814,7 @@
 
     .pricing-card-badge {
       background: var(--gold);
-      color: var(--navy);
+      color: var(--white);
       font-family: var(--font-heading);
       font-size: 0.8125rem;
       font-weight: 700;
@@ -874,7 +874,7 @@
       border-radius: var(--radius-full);
       font-size: 0.8125rem;
       font-weight: 600;
-      color: #92600A;
+      color: #8B3A2A;
       margin-bottom: 32px;
     }
 
@@ -909,7 +909,7 @@
       font-size: 1.0625rem;
       padding: 18px 32px;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--white);
       border: none;
       border-radius: var(--radius-md);
       cursor: pointer;
@@ -918,7 +918,7 @@
     .btn-pricing:hover {
       background: var(--gold-hover);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-gold), 0 8px 24px rgba(240,180,41,0.3);
+      box-shadow: var(--shadow-gold), 0 8px 24px rgba(232,115,90,0.3);
     }
 
     .pricing-guarantee {
@@ -1026,7 +1026,7 @@
       transform: translateX(-50%);
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(240,180,41,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,115,90,0.1) 0%, transparent 70%);
       border-radius: 50%;
     }
     .final-cta .container { position: relative; z-index: 1; }
@@ -1145,7 +1145,7 @@
       font-size: 0.9375rem;
       padding: 14px 24px;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--white);
       border-radius: var(--radius-md);
       text-align: center;
       transition: background 0.2s ease;
@@ -1278,7 +1278,7 @@
 
     <div class="hero-wave">
       <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 60V20C240 50 480 0 720 20C960 40 1200 10 1440 30V60H0Z" fill="#F9FAFB"/>
+        <path d="M0 60V20C240 50 480 0 720 20C960 40 1200 10 1440 30V60H0Z" fill="#FDF5F1"/>
       </svg>
     </div>
   </section>
@@ -1289,20 +1289,20 @@
   <section class="trust-bar">
     <div class="container">
       <div class="trust-item reveal">
-        <div class="trust-icon">&#127891;</div>
-        <span><strong>5+ Years</strong> running academies</span>
+        <div class="trust-icon">&#127919;</div>
+        <span>Move from "nice conversations" to <strong>real impact</strong> in diverse teams</span>
       </div>
       <div class="trust-item reveal reveal-delay-1">
-        <div class="trust-icon">&#127760;</div>
-        <span><strong>19+ Countries</strong> represented</span>
+        <div class="trust-icon">&#128161;</div>
+        <span><strong>Challenge your own patterns</strong> before trying to change others</span>
       </div>
       <div class="trust-item reveal reveal-delay-2">
-        <div class="trust-icon">&#128101;</div>
-        <span><strong>500+</strong> Alumni network</span>
+        <div class="trust-icon">&#9889;</div>
+        <span><strong>Experience the methods</strong> before applying them</span>
       </div>
       <div class="trust-item reveal reveal-delay-3">
-        <div class="trust-icon">&#11088;</div>
-        <span><strong>4.8/5</strong> Satisfaction rate</span>
+        <div class="trust-icon">&#129309;</div>
+        <span>Build <strong>relationships</strong> that go beyond the bootcamp</span>
       </div>
     </div>
   </section>
