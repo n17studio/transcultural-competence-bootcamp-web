@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Style Guide — Academy for Diversity and Innovation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       DESIGN TOKENS
+       ======================================== */
+    :root {
+      /* Colors — Primary */
+      --navy: #0B2A6B;
+      --navy-light: #1A3D8F;
+      --navy-dark: #071D4A;
+      --gold: #F0B429;
+      --gold-hover: #D99E1E;
+      --gold-light: rgba(240, 180, 41, 0.12);
+
+      /* Colors — Accent */
+      --teal: #0D9488;
+      --teal-hover: #0B7E73;
+      --teal-light: #CCFBF1;
+
+      /* Colors — Neutrals */
+      --text-primary: #111827;
+      --text-secondary: #374151;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --surface: #F9FAFB;
+      --cream: #FFFBF5;
+      --white: #FFFFFF;
+
+      /* Colors — Semantic */
+      --success: #059669;
+      --warning: #D97706;
+      --error: #DC2626;
+
+      /* Typography */
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Spacing (4px grid) */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 32px;
+      --space-8: 40px;
+      --space-9: 48px;
+      --space-10: 64px;
+      --space-11: 80px;
+      --space-12: 96px;
+      --space-13: 128px;
+
+      /* Border Radius */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+      --shadow-gold: 0 4px 16px rgba(240,180,41,0.25);
+    }
+
+    /* ========================================
+       BASE RESET & STYLES
+       ======================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ========================================
+       LAYOUT
+       ======================================== */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .section {
+      padding: var(--space-12) 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: var(--space-2);
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-8);
+      max-width: 640px;
+    }
+
+    .subsection {
+      margin-top: var(--space-9);
+    }
+
+    .subsection-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-5);
+    }
+
+    /* ========================================
+       HEADER
+       ======================================== */
+    .brand-header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+      padding: var(--space-12) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(240,180,41,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .brand-header::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .brand-header .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-header .logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto var(--space-6);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .brand-header .logo img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .brand-header .overline {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .brand-header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: var(--space-3);
+    }
+
+    .brand-header .subtitle {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: var(--space-7);
+    }
+
+    .brand-header .tagline {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gold);
+      border: 1px solid rgba(240,180,41,0.3);
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      background: rgba(240,180,41,0.08);
+    }
+
+    /* ========================================
+       NAV (sticky)
+       ======================================== */
+    .style-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-3) 0;
+    }
+
+    .style-nav .container {
+      display: flex;
+      gap: var(--space-1);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .style-nav .container::-webkit-scrollbar { display: none; }
+
+    .style-nav a {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .style-nav a:hover {
+      color: var(--navy);
+      background: var(--surface);
+    }
+
+    /* ========================================
+       COLOR SWATCHES
+       ======================================== */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-5);
+    }
+
+    .color-swatch {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .color-swatch .swatch-fill {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-3);
+    }
+
+    .color-swatch .swatch-fill span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(4px);
+    }
+
+    .color-swatch .swatch-info {
+      padding: var(--space-3) var(--space-4);
+    }
+
+    .color-swatch .swatch-name {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .color-swatch .swatch-var {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       TYPOGRAPHY SHOWCASE
+       ======================================== */
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-7);
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-row:last-child { border-bottom: none; }
+
+    .type-meta {
+      flex-shrink: 0;
+      width: 140px;
+    }
+
+    .type-meta .label {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .type-meta .specs {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .type-sample {
+      flex: 1;
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    /* Sizes */
+    .btn-sm {
+      font-size: 0.875rem;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-md {
+      font-size: 0.9375rem;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+    }
+
+    .btn-lg {
+      font-size: 1rem;
+      padding: var(--space-4) var(--space-7);
+      border-radius: var(--radius-md);
+    }
+
+    /* Variants */
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: var(--navy-light);
+      border-color: var(--navy-light);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      border-color: transparent;
+    }
+    .btn-ghost:hover {
+      background: var(--surface);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+    .btn-teal:hover {
+      background: var(--teal-hover);
+      border-color: var(--teal-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn:disabled, .btn.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    /* ========================================
+       CARDS
+       ======================================== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .card-body {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      margin-top: var(--space-4);
+      transition: gap 0.2s ease;
+    }
+
+    .card-link:hover { gap: var(--space-2); }
+
+    /* Feature card */
+    .card-feature {
+      border-top: 4px solid var(--gold);
+    }
+
+    .card-feature.teal {
+      border-top-color: var(--teal);
+    }
+
+    .card-feature .card-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-4);
+    }
+
+    /* Navy card */
+    .card-navy {
+      background: var(--navy);
+      border-color: var(--navy);
+      border-left: 4px solid var(--gold);
+    }
+
+    .card-navy .card-title {
+      color: var(--white);
+    }
+
+    .card-navy .card-body {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .card-navy .card-author {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-top: var(--space-4);
+    }
+
+    /* ========================================
+       BADGES
+       ======================================== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+
+    .badge-default {
+      background: var(--surface);
+      color: var(--text-secondary);
+    }
+
+    .badge-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .badge-gold {
+      background: var(--gold-light);
+      color: #92600A;
+    }
+
+    .badge-teal {
+      background: var(--teal-light);
+      color: #065F56;
+    }
+
+    .badge-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    /* ========================================
+       DEMO SECTIONS
+       ======================================== */
+    .demo-wrapper {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Hero Demo */
+    .demo-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      padding: var(--space-12) var(--space-8);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(240,180,41,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .demo-hero * { position: relative; z-index: 1; }
+
+    .demo-hero .overline {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .demo-hero h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: var(--space-5);
+    }
+
+    .demo-hero p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto var(--space-7);
+      line-height: 1.7;
+    }
+
+    .demo-hero .btn-row {
+      justify-content: center;
+    }
+
+    /* Content Demo */
+    .demo-content {
+      background: var(--white);
+      padding: var(--space-11) var(--space-8);
+    }
+
+    .demo-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: center;
+    }
+
+    .demo-content h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .demo-content p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+
+    .demo-features-mini {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .demo-feature-item {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+    }
+
+    .demo-feature-item .icon {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .demo-feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .demo-feature-item p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* CTA Band */
+    .demo-cta {
+      background: var(--gold);
+      padding: var(--space-9) var(--space-8);
+      text-align: center;
+    }
+
+    .demo-cta h3 {
+      font-family: var(--font-heading);
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: var(--space-3);
+    }
+
+    .demo-cta p {
+      font-size: 1rem;
+      color: var(--navy-light);
+      margin-bottom: var(--space-6);
+    }
+
+    /* ========================================
+       SPACING TOKENS VISUAL
+       ======================================== */
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-2) 0;
+    }
+
+    .spacing-label {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .spacing-bar {
+      height: 24px;
+      background: linear-gradient(90deg, var(--navy), var(--teal));
+      border-radius: var(--radius-sm);
+      opacity: 0.8;
+    }
+
+    .spacing-px {
+      font-family: monospace;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      width: 40px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    /* ========================================
+       RADIUS DEMO
+       ======================================== */
+    .radius-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+      align-items: flex-end;
+    }
+
+    .radius-item {
+      text-align: center;
+    }
+
+    .radius-box {
+      width: 80px;
+      height: 80px;
+      background: var(--surface);
+      border: 2px solid var(--navy);
+      margin-bottom: var(--space-2);
+    }
+
+    .radius-item .label {
+      font-family: monospace;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+    }
+
+    .radius-item .value {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* ========================================
+       SHADOW DEMO
+       ======================================== */
+    .shadow-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .shadow-item {
+      text-align: center;
+    }
+
+    .shadow-box {
+      width: 120px;
+      height: 80px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-3);
+    }
+
+    .shadow-item .label {
+      font-family: monospace;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 768px) {
+      .brand-header h1 { font-size: 1.75rem; }
+      .section { padding: var(--space-9) 0; }
+      .type-row { flex-direction: column; gap: var(--space-2); }
+      .type-meta { width: auto; }
+      .demo-content-grid { grid-template-columns: 1fr; gap: var(--space-7); }
+      .demo-features-mini { grid-template-columns: 1fr; }
+      .color-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================
+       HEADER
+       ==================================== -->
+  <header class="brand-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../Tu Diagnóstico de Movilidad Global_files/intercultures-logo.png" alt="Academy for Diversity and Innovation">
+      </div>
+      <div class="overline">Brand Style Guide</div>
+      <h1>Academy for Diversity<br>and Innovation</h1>
+      <p class="subtitle">Transcultural Competence Bootcamp 2026 — Visual Identity System</p>
+      <span class="tagline">Make the world a more inclusive place</span>
+    </div>
+  </header>
+
+  <!-- ====================================
+       STICKY NAV
+       ==================================== -->
+  <nav class="style-nav">
+    <div class="container">
+      <a href="#colors">Colors</a>
+      <a href="#typography">Typography</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#cards">Cards</a>
+      <a href="#badges">Badges</a>
+      <a href="#layouts">Layouts</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#radius">Radius</a>
+      <a href="#shadows">Shadows</a>
+    </div>
+  </nav>
+
+  <!-- ====================================
+       COLORS
+       ==================================== -->
+  <section class="section" id="colors">
+    <div class="container">
+      <h2 class="section-title">Color Palette</h2>
+      <p class="section-desc">A refined palette built on deep navy and warm gold, with teal as a fresh accent connecting to the seaside bootcamp experience.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Primary</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#0B2A6B;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Navy</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#0B2A6B</div>
+              <div class="swatch-var">--navy</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#1A3D8F;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Navy Light</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#1A3D8F</div>
+              <div class="swatch-var">--navy-light</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#F0B429;"><span style="color:#0B2A6B;background:rgba(255,255,255,0.4);">Gold</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#F0B429</div>
+              <div class="swatch-var">--gold</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:rgba(240,180,41,0.12); border-bottom: 1px solid var(--border);"><span style="color:#92600A;background:rgba(255,255,255,0.6);">Gold Light</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">rgba(240,180,41,0.12)</div>
+              <div class="swatch-var">--gold-light</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Accent</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#0D9488;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Teal</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#0D9488</div>
+              <div class="swatch-var">--teal</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#CCFBF1; border-bottom: 1px solid var(--border);"><span style="color:#065F56;background:rgba(255,255,255,0.5);">Teal Light</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#CCFBF1</div>
+              <div class="swatch-var">--teal-light</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Neutrals</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#111827;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Text Primary</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#111827</div>
+              <div class="swatch-var">--text-primary</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#374151;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Text Secondary</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#374151</div>
+              <div class="swatch-var">--text-secondary</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#6B7280;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Text Muted</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#6B7280</div>
+              <div class="swatch-var">--text-muted</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#E5E7EB; border-bottom: 1px solid #ccc;"><span style="color:#374151;background:rgba(255,255,255,0.5);">Border</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#E5E7EB</div>
+              <div class="swatch-var">--border</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#F9FAFB; border-bottom: 1px solid #E5E7EB;"><span style="color:#374151;background:rgba(255,255,255,0.5);">Surface</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#F9FAFB</div>
+              <div class="swatch-var">--surface</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#FFFBF5; border-bottom: 1px solid #E5E7EB;"><span style="color:#374151;background:rgba(255,255,255,0.5);">Cream</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#FFFBF5</div>
+              <div class="swatch-var">--cream</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Semantic</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#059669;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Success</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#059669</div>
+              <div class="swatch-var">--success</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#D97706;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Warning</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#D97706</div>
+              <div class="swatch-var">--warning</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch-fill" style="background:#DC2626;"><span style="color:#fff;background:rgba(0,0,0,0.2);">Error</span></div>
+            <div class="swatch-info">
+              <div class="swatch-name">#DC2626</div>
+              <div class="swatch-var">--error</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       TYPOGRAPHY
+       ==================================== -->
+  <section class="section" id="typography">
+    <div class="container">
+      <h2 class="section-title">Typography</h2>
+      <p class="section-desc">Plus Jakarta Sans for headings brings geometric warmth. Inter for body text ensures maximum readability.</p>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Display</div>
+          <div class="specs">Jakarta 800 / 56px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-heading);font-size:3.5rem;font-weight:800;line-height:1.1;color:var(--text-primary);">
+          Transcultural Competence
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H1</div>
+          <div class="specs">Jakarta 700 / 40px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-heading);font-size:2.5rem;font-weight:700;line-height:1.2;color:var(--text-primary);">
+          Bootcamp at the Seaside
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H2</div>
+          <div class="specs">Jakarta 700 / 30px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-heading);font-size:1.875rem;font-weight:700;line-height:1.3;color:var(--text-primary);">
+          What Awaits You in Gava Mar
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H3</div>
+          <div class="specs">Jakarta 600 / 24px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-heading);font-size:1.5rem;font-weight:600;line-height:1.4;color:var(--text-primary);">
+          Open Space Technology Sessions
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H4</div>
+          <div class="specs">Jakarta 600 / 20px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-heading);font-size:1.25rem;font-weight:600;line-height:1.4;color:var(--text-primary);">
+          Friday 12th — 18:00 to 22:00
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Body Large</div>
+          <div class="specs">Inter 400 / 18px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1.125rem;font-weight:400;line-height:1.7;color:var(--text-secondary);">
+          Join us for a seaside bootcamp in Gava Mar, Barcelona, created for people working in inclusive leadership who want to deepen their practice and build meaningful professional connections.
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Body</div>
+          <div class="specs">Inter 400 / 16px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1rem;font-weight:400;line-height:1.6;color:var(--text-secondary);">
+          Reflective arrival and small-group conversations to help participants connect, share motivations and questions, and build meaningful relationships.
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Body Small</div>
+          <div class="specs">Inter 400 / 14px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:0.875rem;font-weight:400;line-height:1.6;color:var(--text-muted);">
+          Academy for Diversity and Innovation. All rights reserved.
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Caption</div>
+          <div class="specs">Inter 500 / 12px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:0.75rem;font-weight:500;line-height:1.5;color:var(--text-muted);">
+          PROMOTION CODE: EARLY10
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Overline</div>
+          <div class="specs">Inter 600 / 11px / 2px</div>
+        </div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:0.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--teal);">
+          12-13 June 2026 &bull; Gava Mar, Barcelona
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       BUTTONS
+       ==================================== -->
+  <section class="section" id="buttons">
+    <div class="container">
+      <h2 class="section-title">Buttons</h2>
+      <p class="section-desc">Six variants across three sizes. All buttons use Plus Jakarta Sans for consistency with headings.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Variants</h3>
+        <div class="btn-row">
+          <button class="btn btn-md btn-primary">Primary Navy</button>
+          <button class="btn btn-md btn-gold">Gold CTA</button>
+          <button class="btn btn-md btn-teal">Teal Accent</button>
+          <button class="btn btn-md btn-outline">Outline</button>
+          <button class="btn btn-md btn-ghost">Ghost</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Sizes</h3>
+        <div class="btn-row">
+          <button class="btn btn-sm btn-primary">Small</button>
+          <button class="btn btn-md btn-primary">Medium</button>
+          <button class="btn btn-lg btn-primary">Large</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Gold Sizes</h3>
+        <div class="btn-row">
+          <button class="btn btn-sm btn-gold">Register Now</button>
+          <button class="btn btn-md btn-gold">Register Now</button>
+          <button class="btn btn-lg btn-gold">Register Now</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Disabled State</h3>
+        <div class="btn-row">
+          <button class="btn btn-md btn-primary disabled" disabled>Disabled Primary</button>
+          <button class="btn btn-md btn-gold disabled" disabled>Disabled Gold</button>
+          <button class="btn btn-md btn-outline disabled" disabled>Disabled Outline</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">On Dark Background</h3>
+        <div style="background:var(--navy);border-radius:var(--radius-lg);padding:var(--space-7);">
+          <div class="btn-row">
+            <button class="btn btn-md btn-gold">Register Now</button>
+            <button class="btn btn-md btn-outline-white">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       CARDS
+       ==================================== -->
+  <section class="section" id="cards" style="background:var(--surface);">
+    <div class="container">
+      <h2 class="section-title">Cards</h2>
+      <p class="section-desc">Three card variants for different content types: standard, feature highlight, and dark testimonial.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Standard Card</h3>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-title">Open Space Technology</div>
+            <div class="card-body">Bring your own questions, propose topics, and co-create participant-led sessions focused on real challenges, shared learning, and practical next steps.</div>
+            <a href="#" class="card-link">Learn more &rarr;</a>
+          </div>
+          <div class="card">
+            <div class="card-title">Meaningful Activities</div>
+            <div class="card-body">Start each day with engaging activities to create psychological safety and build a community of practice around transcultural competence.</div>
+            <a href="#" class="card-link">Learn more &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Feature Cards</h3>
+        <div class="card-grid">
+          <div class="card card-feature">
+            <div class="card-icon">&#127758;</div>
+            <div class="card-title">Networking Opportunities</div>
+            <div class="card-body">Connect with international peers to share insights and explore collaborative projects across cultures.</div>
+          </div>
+          <div class="card card-feature teal">
+            <div class="card-icon">&#127754;</div>
+            <div class="card-title">Seaside Experience</div>
+            <div class="card-body">Sunset dinner at the beach and a walk along the shore to continue conversations in a relaxed setting.</div>
+          </div>
+          <div class="card card-feature">
+            <div class="card-icon">&#128736;</div>
+            <div class="card-title">Hands-On Workshops</div>
+            <div class="card-body">Design your own sessions and engage in peer exchange and collaborative problem-solving.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Navy Card (Testimonial / Quote)</h3>
+        <div class="card-grid">
+          <div class="card card-navy">
+            <div class="card-body">"The bootcamp transformed how I approach intercultural challenges in my organization. The Open Space format created genuine dialogue that I still draw from months later."</div>
+            <div class="card-author">— Tamara Thorpe, Leadership Consultant</div>
+          </div>
+          <div class="card card-navy">
+            <div class="card-body">"An incredible experience of co-creation and connection. The seaside setting added a dimension of openness that I've never experienced at a professional event."</div>
+            <div class="card-author">— Francisco Gallego, HR Director</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       BADGES
+       ==================================== -->
+  <section class="section" id="badges">
+    <div class="container">
+      <h2 class="section-title">Badges &amp; Tags</h2>
+      <p class="section-desc">Compact labels for categories, status, and metadata.</p>
+
+      <div class="badge-row" style="margin-bottom:var(--space-6);">
+        <span class="badge badge-default">Default</span>
+        <span class="badge badge-navy">Navy</span>
+        <span class="badge badge-gold">Gold</span>
+        <span class="badge badge-teal">Teal</span>
+        <span class="badge badge-outline">Outline</span>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">In Context</h3>
+        <div class="badge-row">
+          <span class="badge badge-gold">Early Bird -10%</span>
+          <span class="badge badge-teal">Limited Spots</span>
+          <span class="badge badge-navy">New</span>
+          <span class="badge badge-default">12-13 June 2026</span>
+          <span class="badge badge-outline">Barcelona</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       DEMO LAYOUTS
+       ==================================== -->
+  <section class="section" id="layouts">
+    <div class="container">
+      <h2 class="section-title">Section Layouts</h2>
+      <p class="section-desc">Three foundational section compositions: hero, content, and CTA band — ready for the bootcamp landing page.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Hero Section</h3>
+        <div class="demo-wrapper">
+          <div class="demo-hero">
+            <div class="overline">12-13 June 2026 &bull; Gava Mar, Barcelona</div>
+            <h2>Transcultural<br>Competence Bootcamp</h2>
+            <p>Join us for a seaside experience created for people working in inclusive leadership who want to deepen their practice and build meaningful connections.</p>
+            <div class="btn-row">
+              <button class="btn btn-lg btn-gold">Register Now</button>
+              <button class="btn btn-lg btn-outline-white">See Programme</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Content Section</h3>
+        <div class="demo-wrapper">
+          <div class="demo-content">
+            <div class="demo-content-grid">
+              <div>
+                <h3>What Awaits You</h3>
+                <p>Two immersive days of co-creation, reflection, and community building at the seaside. Designed around the Open Space Technology method, every session emerges from the group's real questions and challenges.</p>
+                <button class="btn btn-md btn-primary">Explore the Programme</button>
+              </div>
+              <div class="demo-features-mini">
+                <div class="demo-feature-item">
+                  <div class="icon">&#128101;</div>
+                  <h4>Small Groups</h4>
+                  <p>Intimate peer exchange</p>
+                </div>
+                <div class="demo-feature-item">
+                  <div class="icon">&#127754;</div>
+                  <h4>Seaside Setting</h4>
+                  <p>Sunset dinners at the beach</p>
+                </div>
+                <div class="demo-feature-item">
+                  <div class="icon">&#128161;</div>
+                  <h4>Open Space</h4>
+                  <p>Participant-led sessions</p>
+                </div>
+                <div class="demo-feature-item">
+                  <div class="icon">&#127760;</div>
+                  <h4>International</h4>
+                  <p>Cross-cultural networking</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">CTA Band</h3>
+        <div class="demo-wrapper">
+          <div class="demo-cta">
+            <h3>Ready to Join the Bootcamp?</h3>
+            <p>Limited spots available. Use code EARLY10 for 10% off.</p>
+            <button class="btn btn-lg btn-primary">Register Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       SPACING
+       ==================================== -->
+  <section class="section" id="spacing" style="background:var(--surface);">
+    <div class="container">
+      <h2 class="section-title">Spacing Scale</h2>
+      <p class="section-desc">Based on a 4px grid. Used consistently for padding, margin, and gap values.</p>
+
+      <div class="spacing-row">
+        <div class="spacing-label">--space-1</div>
+        <div class="spacing-bar" style="width:4px;"></div>
+        <div class="spacing-px">4px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-2</div>
+        <div class="spacing-bar" style="width:8px;"></div>
+        <div class="spacing-px">8px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-3</div>
+        <div class="spacing-bar" style="width:12px;"></div>
+        <div class="spacing-px">12px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-4</div>
+        <div class="spacing-bar" style="width:16px;"></div>
+        <div class="spacing-px">16px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-5</div>
+        <div class="spacing-bar" style="width:20px;"></div>
+        <div class="spacing-px">20px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-6</div>
+        <div class="spacing-bar" style="width:24px;"></div>
+        <div class="spacing-px">24px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-7</div>
+        <div class="spacing-bar" style="width:32px;"></div>
+        <div class="spacing-px">32px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-8</div>
+        <div class="spacing-bar" style="width:40px;"></div>
+        <div class="spacing-px">40px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-9</div>
+        <div class="spacing-bar" style="width:48px;"></div>
+        <div class="spacing-px">48px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-10</div>
+        <div class="spacing-bar" style="width:64px;"></div>
+        <div class="spacing-px">64px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-11</div>
+        <div class="spacing-bar" style="width:80px;"></div>
+        <div class="spacing-px">80px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-12</div>
+        <div class="spacing-bar" style="width:96px;"></div>
+        <div class="spacing-px">96px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">--space-13</div>
+        <div class="spacing-bar" style="width:128px;"></div>
+        <div class="spacing-px">128px</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       BORDER RADIUS
+       ==================================== -->
+  <section class="section" id="radius">
+    <div class="container">
+      <h2 class="section-title">Border Radius</h2>
+      <p class="section-desc">A systematic scale from subtle to fully rounded.</p>
+
+      <div class="radius-grid">
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:6px;"></div>
+          <div class="value">6px</div>
+          <div class="label">--radius-sm</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:10px;"></div>
+          <div class="value">10px</div>
+          <div class="label">--radius-md</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:16px;"></div>
+          <div class="value">16px</div>
+          <div class="label">--radius-lg</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:24px;"></div>
+          <div class="value">24px</div>
+          <div class="label">--radius-xl</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:9999px;"></div>
+          <div class="value">9999px</div>
+          <div class="label">--radius-full</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       SHADOWS
+       ==================================== -->
+  <section class="section" id="shadows" style="background:var(--surface);">
+    <div class="container">
+      <h2 class="section-title">Shadows</h2>
+      <p class="section-desc">Three elevation levels plus a gold glow for primary CTAs.</p>
+
+      <div class="shadow-grid">
+        <div class="shadow-item">
+          <div class="shadow-box" style="box-shadow:0 1px 2px rgba(0,0,0,0.05);"></div>
+          <div class="label">--shadow-sm</div>
+        </div>
+        <div class="shadow-item">
+          <div class="shadow-box" style="box-shadow:0 4px 12px rgba(0,0,0,0.08);"></div>
+          <div class="label">--shadow-md</div>
+        </div>
+        <div class="shadow-item">
+          <div class="shadow-box" style="box-shadow:0 12px 32px rgba(0,0,0,0.12);"></div>
+          <div class="label">--shadow-lg</div>
+        </div>
+        <div class="shadow-item">
+          <div class="shadow-box" style="box-shadow:0 4px 16px rgba(240,180,41,0.25);background:var(--gold);"></div>
+          <div class="label">--shadow-gold</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================
+       FOOTER
+       ==================================== -->
+  <footer style="background:var(--navy);padding:var(--space-8) 0;text-align:center;">
+    <div class="container">
+      <p style="font-family:var(--font-heading);font-size:0.875rem;font-weight:600;color:var(--gold);margin-bottom:var(--space-2);">Academy for Diversity and Innovation</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Brand Style Guide — Transcultural Competence Bootcamp 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
